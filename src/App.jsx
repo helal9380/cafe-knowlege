@@ -8,9 +8,16 @@ import Header from './Components/Header/Header'
 function App() {
 const [bookmark, setBookMark] = useState([])
 
-const handleBookMarks = (blog) => {
-  const newBook = [...bookmark, blog]
-  setBookMark(newBook)
+const handleBookMarks = (blog,id) => {
+  console.log(id)
+  const newId = bookmark.find(item => item.id == id)
+  if(!newId) {
+    setBookMark([...bookmark,blog])
+  }
+  else{
+    alert('already exist')
+  }
+  
  
 }
 console.log(bookmark)

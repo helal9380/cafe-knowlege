@@ -9,7 +9,8 @@ const Bookmarks = ({blog}) => {
                 <h2 className="text-xl font-semibold">Book marks:{blog.length}</h2>
                 <div>
                 {
-                    blog.map((b,indx) => <div className="bg-white mt-2 rounded p-2" key={indx}>
+                    // eslint-disable-next-line react/jsx-key
+                    blog.map((b) => <div className="bg-white mt-2 rounded p-2">
                         <h2 className='font-semibold'>{b.title}</h2>
                     </div>)
                 }

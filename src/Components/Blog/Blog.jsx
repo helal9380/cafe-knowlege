@@ -3,7 +3,7 @@ import { FaBookmark } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 const Blog = ({blog, handleBookMarks}) => {
     console.log(blog)
-    const {cover, title,posted_date, reading_time,author,author_img} = blog;
+    const { id, cover, title,posted_date, reading_time,author,author_img} = blog;
     return (
         <div>
             <img className='rounded-lg w-full' src={cover} alt="" />
@@ -17,7 +17,7 @@ const Blog = ({blog, handleBookMarks}) => {
                 <div className='flex items-center'>
                     <h4 className='font-semibold'>reading time {reading_time} minite </h4>
                     <button
-                    onClick={() => handleBookMarks(blog)}
+                    onClick={() => handleBookMarks(blog,id)}
                     className='ml-4 text-red-500'>
                         <FaBookmark></FaBookmark>
                     </button>
