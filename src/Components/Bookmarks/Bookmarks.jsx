@@ -1,6 +1,6 @@
 
 import PropTypes from 'prop-types';
-const Bookmarks = ({blog}) => {
+const Bookmarks = ({blog, deleteItem}) => {
     
 
     return (
@@ -12,6 +12,7 @@ const Bookmarks = ({blog}) => {
                     // eslint-disable-next-line react/jsx-key
                     blog.map((b) => <div className="bg-white mt-2 rounded p-2">
                         <h2 className='font-semibold'>{b.title}</h2>
+                        <button onClick={() => deleteItem(b.id)} className='py-1 px-2 bg-red-500 text-white rounded-lg mt-2'>Delete</button>
                     </div>)
                 }
                 </div>
@@ -20,6 +21,7 @@ const Bookmarks = ({blog}) => {
     );
 };
 Bookmarks.propTypes = {
-    blog: PropTypes.array.isRequired
+    blog: PropTypes.array.isRequired,
+    deleteItem: PropTypes.func.isRequired
 }
 export default Bookmarks;

@@ -17,16 +17,19 @@ const handleBookMarks = (blog,id) => {
   else{
     alert('already exist')
   }
-  
- 
 }
-console.log(bookmark)
+
+const deleteItem = (id) => {
+  const deletId = bookmark.filter(item => item.id !== id);
+  setBookMark(deletId)
+}
+
   return (
     <>
       <Header></Header>
       <div className='flex mt-5 max-w-screen-lg mx-auto gap-4'>
         <Bloges handleBookMarks={handleBookMarks}></Bloges>
-        <Bookmarks blog={bookmark}></Bookmarks>
+        <Bookmarks blog={bookmark} deleteItem={deleteItem}></Bookmarks>
       </div>
     </>
   )
